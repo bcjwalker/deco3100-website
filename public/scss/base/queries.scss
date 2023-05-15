@@ -1,0 +1,33 @@
+// 1080p
+@media screen and (width < 2560px) {
+    #main-projects-container{
+        font-size: 1.55vmin;
+    }
+  }
+
+// 1440p – 2160p 
+@media screen and (2560px <= width <= 3840px) {
+    main {
+      margin: 0 1.225vw 0 1.225vw;
+    }
+    body {  
+        grid-template-columns: 11vw 76vw 13vw;
+    }
+        body.retract {
+            grid-template-columns: 7vw 80vw 13vw;
+        }
+
+    #intro-titles {
+        margin-top: 0.425em; 
+        font-size: 36vh;
+    }
+
+    aside {
+        padding: 20vh 0 0 2vw;
+
+        #aside-infobox {
+            width: 6.5vw;
+            font-size: 0.75vw;
+        }
+    }    
+  }

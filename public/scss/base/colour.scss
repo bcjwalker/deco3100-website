@@ -1,0 +1,13 @@
+// Colour variables
+:root {
+    --shade-base-1: hsl(225, 5%, 15%);
+
+    --shade-text-1: hsl(225, 5%, 90%);
+
+    --shade-outline-1: hsl(225, 5%, 30%);
+}
+
+body {
+    background-color: var(--shade-base-1);
+}
+
