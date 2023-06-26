@@ -1,76 +1,140 @@
-button {
-    cursor: pointer;
-    text-align: center; 
+// All material symbols
+span.material-symbols-outlined {
+    aspect-ratio: 1/1;
+    font-size: 1.25rem;
+    color: var(--shade-text-1)
+}
 
-    color: hsl(0, 0%, 20%);
+// Scroll styling
+body::-webkit-scrollbar {
+    width: 0.6em;
+  }
+  body::-webkit-scrollbar-track {
+    margin-top: 55px;
+  }
+  body::-webkit-scrollbar-thumb {
+    width: 0.4em;
+
+    background-color: var(--shade-accent-1);
+    border-radius: 4px;
+  }
+    // Hover: a subtle active effect
+    body::-webkit-scrollbar-thumb:hover {
+        background-color: var(--shade-outline-2);
+
+        transition: background-color 0.1s;
+    }
+    // Active: a subtle click effect
+    body::-webkit-scrollbar-thumb:active {
+        background-color: var(--shade-outline-1);
+
+        transition: background-color 0.1s;
+    }
+
+button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+
+    color: var(--shade-text-1);
+    background-color: transparent;
+    border-color: var(--shade-outline-1);
+    border-width: 1px;
     border-radius: 100px;
+    border-style: double;
+    font-size: 0.9rem;
 
     transition: background-color 0.275s;
+
+    span {
+        padding-bottom: 2px;
+    }
 }
-    // Standard icon/text buttons
-    button.stdbtn {
-        
+// Standard icon/text buttons
+button.stdbtn {
+    
+}
+// Single icon buttons
+button.iconbtn {
+    border: none;   
+    background-color: transparent;
+}
+    // Hover: a subtle active effect
+    button:hover {
+        background-color: hsla(0, 0%, 100%, 0.03);
+
+        transition: background-color 0.1s;
     }
-    // Single icon buttons
-    button.iconbtn {
-        aspect-ratio: 1 / 1;
-        border: none;   
-        background-color: transparent;
+    // Active: a subtle click effect
+    button:active {
+        background-color: hsla(0, 0%, 100%, 0.05);
+
+        transition: background-color 0.1s;
     }
 
-        // Hover: a subtle active effect
-        button:hover {
-            background-color: hsla(0, 0%, 20%, 0.05);
+// Labels attached to some buttons, some have icons
+.btn-label {   
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
 
-            transition: background-color 0.1s;
-        }
-        // Active: a subtle click effect
-        button:active {
-            background-color: hsla(0, 0%, 20%, 0.1);
+    span {
+        font-weight: 500;
+        font-size: 1.1rem;
+        color: var(--shade-text-4);
+    }
+    
+    h6 {
+        display: inline-block;
 
-            transition: background-color 0.1s;
-        }
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: var(--shade-text-4);
+    }
+}
 
 // Nav buttons
     // Hover: a subtle overlay effect
     .navbox-btn:hover {
-        background-color: hsla(0, 0%, 20%, 0.05);
+        background-color: hsla(0, 0%, 70%, 0.05);
 
         transition: background-color 0.1s;
     }
     // Active: a subtle click effect
     .navbox-btn:active {
-        background-color: hsla(0, 0%, 20%, 0.1);
+        background-color: hsla(0, 0%, 70%, 0.1);
 
         transition: background-color 0.1s;
     }
 
-// Projects buttons
-    // (Big) Projects cards
-    .projects-big-card {
-
-    }
-    .projects-big-card:hover {
-        cursor: pointer;
-        text-decoration: underline;
-        .projects-big-card-thumb {
-            background-color: hsl(0, 0%, 92.5%);
-
-            transition: background-color 0.1s;
-            img {
-                opacity: 0.9;
-            }
-        }
-    }
-
-// All material symbols
-span.material-symbols-rounded {
-    padding: 5px;
-    aspect-ratio: 1/1;
-
-    font-weight: 350;
-    font-size: 1.8em;
-    line-height: 1em;
-    color: var(--shade-text-1);
+// Switcher
+.btn-switcher {
 }
+    // Left
+    .btn-switcher-left {
+        padding: 10px 18px !important;
+
+        border-radius: 20px 0 0 20px;
+        border-width: 1px 0 1px 1px;
+    }
+        .checked {
+            background-color: var(--shade-accent-1) !important;
+        }
+
+
+    // Centre?
+
+    // Right
+    .btn-switcher-right {
+        padding: 10px 18px !important;
+
+        border-radius: 0 20px 20px 0;
+    }
+        .checked {
+            background-color: var(--shade-accent-1) !important;
+        }
+
 

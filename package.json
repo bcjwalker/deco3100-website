@@ -1,8 +1,8 @@
 {
-  "name": "bcjw_portfolio23",
+  "name": "deco3100_website",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "version": "0.1.0",
-  "description": "Latest version of my (Benjamin Walker) portfolio",
+  "description": "Latest version of my (Benjamin Walker) DECO3100 project",
   "//main": "dist/index.html",
   "scripts": {
     "start": "node public/server.js",
@@ -10,21 +10,15 @@
     "dev": "parcel serve ./public/index.html",
     "clean": "rimraf dist && rimraf .parcel-cache",
     "predeploy": "rimraf dist && parcel build ./public/index.html --no-optimize --public-url ./",
-    "deploy": "gh-pages -d dist"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bcjwalker/portfolio.git"
+    "deploy": "gh-pages -d dist",
+
+    "build-plain": "parcel build ./public/index.html --no-optimize --no-scope-hoist --public-url ./"
   },
   "keywords": [
     "design"
   ],
   "author": "bcjwalker",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bcjwalker/portfolio/issues"
-  },
-  "homepage": "https://bcjwalker.github.io/portfolio/",
   "dependencies": {
     "express": "^4.18.2"
   },

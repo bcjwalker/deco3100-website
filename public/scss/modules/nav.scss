@@ -1,23 +1,44 @@
 nav {
     //background-image: linear-gradient(to left, hsl(035, 32%, 95%), hsl(035, 32%, 99%) 50%);
     font-size: 2vh;
-    * {
-        color: var(--shade-text-1);
-    }
 }
 
 // Nav box
 #navbox {
-    display: none;
+    display: block;
     
     position: sticky;
     top: 11vh;
-    margin-top: 20vh;
+    margin-top: 15vh;
 
     // List
     ul {
-        padding-inline-start: 1.15vw;
+        padding-inline-start: 35px;
         list-style-type: none;
+
+        hr.divider-h {
+            width: 130px;
+            //margin-left: 10px;
+            transition: width 0.2s;
+        }
+            hr.divider-h.closed {
+                width: 45px;
+            }
+        
+        .nav-sub {
+            margin: 8px 0px 5px 10px;
+            line-height: 1rem;
+
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--shade-text-5);
+            opacity: 1;
+        }
+            .nav-sub.closed {
+                opacity: 0;
+
+                transition: opacity 0.2s;
+            }
 
         // List points: nav buttons
         li a {
@@ -30,7 +51,11 @@ nav {
             } 
             // Closed version: shrinks width
             li a.closed {
-                max-width: 64px;
+                max-width: 43px;
+                span {
+                    color: var(--shade-accent-1);
+                    transition: color 0.4s;
+                }
             }
 
         // (UNDONE) Space all list elements except for last
@@ -44,21 +69,28 @@ nav {
 .navbox-btn {
     display: block;
     text-decoration: none;
-    width: auto;
+    width: 120px;
+    height: 50px;
 
     border-radius: 100px;
 
     transition: background-color 0.275s;
+
     // Button text
     .navbox-btn-p {
         display: inline-block;
+        position: absolute;
+        left: 80px;
         vertical-align: middle; 
         opacity: 1;
         margin: 0;
+        width: 55px !important;
+        height: 30px !important;
 
         font-size: 1rem;
-        font-weight: 600;
+        font-weight: 500;
         line-height: 1.9em;
+        color:var(--shade-text-3);
 
         transition: opacity 0.2s;
     }
@@ -68,11 +100,12 @@ nav {
 
             transition: opacity 0.2s;
         }
+        
     // Button symbols   
-    span.material-symbols-rounded {
-        display: inline-block;
-        vertical-align: middle; 
-
-        font-size: 30px;
+    span.material-symbols-outlined {
+        font-size: 1.35rem;
+        font-weight: 300;
+        color: var(--shade-text-3);
+        transition: color 0.4s;
     }
 }

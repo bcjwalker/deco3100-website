@@ -3,12 +3,13 @@ html, body {
   margin: 0; 
   padding: 0; 
   overflow-x: hidden;
+  overflow-y: visible;
 }
 
 // Stock holy layout grid wrapping the body
 body {
     display: grid; 
-    grid-template-columns: 0.2fr 1fr 0.2fr;
+    grid-template-columns: 15vw 77vw 8vw;
     grid-template-rows: 50px 1fr 100px; 
     //gap: 20px;
     grid-template-areas: 
@@ -18,18 +19,13 @@ body {
 
     transition: grid-template-columns 0.2s;  
 }
-  body.retract {
-    grid-template-columns: 7vw 81vw 12vw;
-
-    transition: grid-template-columns 0.2s;    
+  body.expand {
+    grid-template-columns: 12vw 77vw 11vw;
   }
 
 header { grid-area: header; }
 main { 
   grid-area: main; 
-  padding: 0 1vw 0 1vw;
-  //padding-left: clamp(0vw, 50vw, 2vw); 
-  //padding-right: clamp(0vw, 50vw, 2vw); 
 } 
 nav { grid-area: nav; }
 aside { grid-area: 1 / 3 / 4 / 4; }

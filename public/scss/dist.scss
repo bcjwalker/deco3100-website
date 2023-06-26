@@ -10,10 +10,10 @@
 @import "layouts/body.scss";
 
     // Modules
+    @import "modules/main.scss";
     @import "modules/header.scss";
     @import "modules/nav.scss";
-    @import "modules/aside.scss"; 
     @import "modules/footer.scss";
 
 // Media queries
-@import "base/queries.scss";
+//@import "base/queries.scss"; Nah

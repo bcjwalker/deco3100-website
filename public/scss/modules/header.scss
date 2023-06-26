@@ -3,32 +3,24 @@ header {
     position: fixed;
     display: flex;
     align-items: center;
-    padding: 15px 1vw 15px 12vw;
-    z-index: 1;
+    height: 54px;
+    padding-left: 25px;
+    z-index: 10;
 
-    font-size: 2vmin;
-    backdrop-filter: blur(2px);
-    background-color: hsl(035, 32%, 92%, 0.98);
     opacity: 0;
-    box-shadow: 0px 1px 2px hsla(0, 0%, 9%, 0.1), 0px 4px 6px hsla(0, 0%, 9%, 0.175);
+    background-color: var(--shade-base-3);
+    box-shadow: 0px 1px 2px hsla(0, 0%, 9%, 0.5), 0px 4px 6px hsla(0, 0%, 9%, 0.35);
     //border-bottom: 1px solid hwb(0 100% 15%);
     * {
         color: hsl(035, 6%, 11%);
     }
-    .head-icon {
-        display: inline-block;
-        padding-right: 1.25em;
-        margin-right: 1.25em;
-        
-        border-right: 1px solid hsl(34, 10%, 55%);
-    }
     .head-text {
         display: inline-block;
+        padding-left: 90px;
 
         font-weight: 500;
-        line-height: 24px;
-        font-size: 18px;
-        color: hsl(34, 10%, 35%);
+        font-size: 17px;
+        color: var(--shade-text-4);
     }
 }
     // Fades in/out for JS
@@ -42,15 +34,18 @@ header {
     }
 
 // Not technically part of header but on top of it
-#head-hamburger-btn {
-    display: none;
-    
-    margin-left: calc(1.15vw + 5px);
+#head-hamburger-btn {   
+    margin-left: 30px;
     position: fixed;
     height: 54px;
-    z-index: 1;
+    aspect-ratio: 1/1;
+    z-index: 10;
     
-    span {
-        font-size: 30px;
+    span.material-symbols-outlined {
+        color: var(--shade-text-1);
+        font-size: 1.65rem;
+        font-weight: 300;
+        width: 54px;
+        line-height: 54px;
     }
 }
