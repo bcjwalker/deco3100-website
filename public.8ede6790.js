@@ -1,11 +1,27 @@
+(function () {
 
 function $parcel$extendImportMap(map) {
   Object.assign(parcelRequire.i ??= {}, map);
 }
 
+var $parcel$bundleURL;
 function $parcel$resolve(url) {
   url = parcelRequire.i?.[url] || url;
-  return new URL($parcel$distDir + url, import.meta.url).toString();
+  if (!$parcel$bundleURL) {
+    try {
+      throw new Error();
+    } catch (err) {
+      var matches = ('' + err.stack).match(
+        /(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g,
+      );
+      if (matches) {
+        $parcel$bundleURL = matches[0];
+      } else {
+        return $parcel$distDir + url;
+      }
+    }
+  }
+  return new URL($parcel$distDir + url, $parcel$bundleURL).toString();
 }
 
       var $parcel$global =
@@ -51,15 +67,15 @@ if (parcelRequire == null) {
 }
 
 var parcelRegister = parcelRequire.register;
-parcelRegister("10yax", function(module, exports) {
+parcelRegister("iJuOZ", function(module, exports) {
 $parcel$extendImportMap({
-    "dOlUH": "data1.94a34c21.csv"
+    "cm5q1": "data1.94a34c21.csv"
 });
 
 });
 
-parcelRegister("gf4gA", function(module, exports) {
-module.exports = $parcel$resolve("dOlUH");
+parcelRegister("2MPZS", function(module, exports) {
+module.exports = $parcel$resolve("cm5q1");
 
 });
 
@@ -76,9 +92,11 @@ module.exports = $parcel$resolve("dOlUH");
 /////////////////
 // Initialise dataset CSV(s), and build chart(s)
 
-Plotly.d3.csv((parcelRequire("gf4gA")), (rawData)=>{
+Plotly.d3.csv((parcelRequire("2MPZS")), (rawData)=>{
+    console.log(rawData);
     // Unpack outputs a row from a given dataset and key term
     const unpack = (data, key)=>data.map((row)=>row[key]);
+    console.log(unpack(rawData, 'lpi_factor'));
     // Init setting vars
     const year = unpack(rawData, 'year');
     // Lines
@@ -297,6 +315,6 @@ Plotly.d3.csv((parcelRequire("gf4gA")), (rawData)=>{
 });
 
 
-parcelRequire("10yax");
-
-//# sourceMappingURL=public.030bc83a.js.map
+parcelRequire("iJuOZ");
+})();
+//# sourceMappingURL=public.8ede6790.js.map
