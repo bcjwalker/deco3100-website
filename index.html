@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A UX/UI design (student) portfolio">
+    <meta name="author" content="bcjwalker">
+    <title>Biodiversity in the Human Era</title> 
+
+    <!-- SCSS distro -->
+    <link href="public.233eb5df.css" rel="stylesheet" type="text/css"> 
+    <!-- Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <!-- Plotly module -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <!-- 'Anchor' to prevent header overlap -->
+    <a class="anchor" id="intro"></a>
+    <!-- Header, only appears after user has scrolled -->
+    <header>
+        <p class="head-text"> Biodiversity in the Human Era </p>
+    </header>
+
+    <!-- Hamburger menu, persistent, remains on top of header -->
+    <button class="iconbtn" id="head-hamburger-btn"> 
+        <span class="material-symbols-outlined"> menu </span> 
+        <span class="tooltiptext">Toggle nav</span>
+
+        <!-- Easy tooltip to show 'toggle nav' when hover, kudos https://www.w3schools.com/css/css_tooltip.asp -->
+        <style>.iconbtn {
+  border-bottom: 1px dotted #000;
+  display: inline-block;
+  position: relative;
+}
+
+.iconbtn .tooltiptext {
+  opacity: 0;
+  color: #0c0c0d;
+  text-align: center;
+  z-index: 1;
+  background-color: #d7d8db;
+  border-radius: 6px;
+  width: 90px;
+  margin-top: 4px;
+  margin-left: -45px;
+  padding: 2px;
+  font: 14px Readex Pro, sans-serif;
+  transition: opacity .1s ease-out;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+}
+
+.iconbtn:hover .tooltiptext {
+  opacity: 1;
+}
+</style>
+    </button>
+
+    <nav>
+        <div id="navbox">
+            <ul>
+                <li id="navbox-btn-intro"> 
+                    <a class="navbox-btn" href="#intro"> <span class="material-symbols-outlined"> park </span> <p class="navbox-btn-p"> Intro </p> </a> 
+                </li>
+                <hr class="divider-h">
+                <p class="nav-sub">Background</p>
+                <li id="navbox-btn-chart1"> 
+                    <a class="navbox-btn" href="#c1"> <span class="material-symbols-outlined"> show_chart </span> <p class="navbox-btn-p"> Chart 1 </p> </a> 
+                </li>
+                <li id="navbox-btn-chart2"> 
+                    <a class="navbox-btn" href="#c2"> <span class="material-symbols-outlined"> public </span> <p class="navbox-btn-p"> Chart 2 </p> </a> 
+                </li>
+                <hr class="divider-h">
+                <p class="nav-sub">Holocene & future</p>
+                <li id="navbox-btn-chart3"> 
+                    <a class="navbox-btn" href="#c3"> <span class="material-symbols-outlined"> radar </span> <p class="navbox-btn-p"> Chart 3 </p> </a> 
+                </li>
+                <li id="navbox-btn-chart4"> 
+                    <a class="navbox-btn" href="#c4"> <span class="material-symbols-outlined"> area_chart </span> <p class="navbox-btn-p"> Chart 4 </p> </a> 
+                </li>
+                <li id="navbox-btn-chart5"> 
+                    <a class="navbox-btn" href="#c5"> <span class="material-symbols-outlined"> ssid_chart </span> <p class="navbox-btn-p"> Chart 5 </p> </a> 
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Intro -->
+        <div id="main-intro-container"> 
+            <!-- Big tree for head img -->
+            <!-- Image from Jeremy Bishop, 2018 https://unsplash.com/photos/EwKXn5CapA4 -->
+            <img class="intro-header-img" src="tree2.866307a2.webp">
+
+            <!-- H1 and two fact cards defining biodiversity -->
+            <div id="intro-text-biodefine-container"> 
+                <div id="intro-text-biodefine">
+                    <h1 class="intro-h1">Biodiversity</h1>
+                    
+                    <!-- 2x biodiversity fact cards -->
+                    <div class="card-columns">
+
+                        <div class="intro-card-container">
+                            <div class="card-head">
+                                <span class="material-symbols-outlined">help</span> 
+                                <h3>Biodiversity</h3>
+                            </div>
+                            <p>The <b class="bold-med">natural variety of flora and fauna</b> in any given area, which sustain each other in an ecosystem.</p>
+                        </div>
+                        <div class="intro-card-container">
+                            <p>The health of these ecosystems is key to the survival of all life on the planet. <b class="bold-med">If one link is broken, the whole chain could collapse.</b></p>
+                        </div>
+                        <div class="intro-card-container" id="intro-card-leading">
+                            <p>But, even as we speak, <b class="bold-med">Earth's biodiversity is under threat </b>from the planet's most intelligent species...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Easy fade in effect for elements, kudos https://www.geeksforgeeks.org/how-to-create-fade-in-effect-on-page-load-using-css/ -->
+                <style>#intro-text-biodefine > .card-columns {
+  animation: .6s ease-out 1s forwards fadeInOpacity;
+}
+
+#intro-text-biodefine {
+  animation: .6s ease-out forwards fadeInBg;
+}
+
+.intro-header-img {
+  animation: 2s ease-out .5s forwards fadeOutOpacity;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInBg {
+  0% {
+    backdrop-filter: none;
+    background-color: #0000;
+  }
+
+  100% {
+    backdrop-filter: blur(2px);
+    background-color: var(--shade-accent-2);
+  }
+}
+
+@keyframes fadeOutOpacity {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: .5;
+  }
+}
+</style>
+
+            </div>
+
+            <!-- H1 and two fact cards on human activity -->
+            <div id="intro-textimg-humans"> 
+                <!-- Image from Adrian Schwarz, 2018 https://unsplash.com/photos/XS7q-baZrmE -->
+                <img class="intro-img" src="city.7c361a70.jpg">
+                <div id="intro-text">
+                    <h1 class="intro-h1">...Humans</h1>
+                </div>
+                <!-- Human fact cards -->
+                <div id="human-cards-bg">
+                    <div class="card-rows">
+                        <div class="intro-card-container">
+                            <div class="card-head">
+                                <span class="material-symbols-outlined">warning</span> 
+                                <h3>Human activity</h3>
+                            </div>
+                            <p>The <b class="bold-med">primary driver</b> of biodiversity's <b class="bold-med">global decline:</b> a decline threatening the very planet on which we rely upon.</p>
+                        </div>
+                        <div class="intro-card-container">
+                            <p>Without a shift in human behaviour, the global ecosystem will shatter.<br><b class="bold-med">And humanity will go with it.</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="divider-h">
+            <div class="section-head">
+                <h2> Background </h2>
+                <p>As humanity has expanded, <b class="bold-med">the rest of the planet's health has spiralled.</b></p>
+            </div>
+        </div>
+
+        <!-- Section 1: Background -->        
+        <div id="main-section1-container">
+
+            <!-- 'Anchor' to prevent header overlap -->
+            <a class="anchor" id="c1"></a>
+
+            <!-- Chart 1: Line graph/LPI and humanity -->
+            <div class="chart-father-left">
+                <div class="chart-container" id="chart1-container">
+
+                    <!-- Controls -->
+                    <div id="chart1-controls">
+                        <h5>LPI & Human Population, 1970-2018</h5>
+                        
+                        <!-- Switcher -->
+                        <div id="chart1-btn1">
+                            <div class="btn-label">
+                                <!-- 
+                                <span class="material-symbols-outlined">visibility</span>
+                                -->
+                                <h6>Compare as</h6>
+                            </div>
+                            <div id="chart1-btn-father">
+                                <button class="btn-switcher btn-switcher-left checked" id="chart1-switcher-sbs">
+                                    <span class="material-symbols-outlined">stacked_line_chart</span>
+                                    Side-by-side
+                                </button>
+                                <button class="btn-switcher btn-switcher-right" id="chart1-switcher-merge">
+                                    <span class="material-symbols-outlined">monitoring</span>
+                                    Single chart
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Desc card -->
+                        <div id="chart1-desc-container">
+                            <div class="chart-desc-head">
+                                <span class="material-symbols-outlined">help</span>
+                                <h4>Living Planet Index</h4>
+                            </div>
+                            <p>The LPI is an averaged figure from the <a href="https://www.livingplanetindex.org/#/">World Wildlife Fund</a>, calculating the rate of change in global wildlife populations.</p>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Side by side Chart 1 -->
+                    <div id="chart1-sidebyside">
+                        <div id="chart1a"></div>
+                        <div id="chart1"></div>
+                    </div>
+
+                    <script type="module" src="public.030bc83a.js"></script><script src="public.fbaac4a7.js" nomodule="" defer=""></script>
+
+                    <!-- Combined Chart 1, hidden by default -->
+                    <div id="chart1-combined" class="chart1-hide">
+                        <div id="chart1b"></div>
+                    </div>
+
+                    <script type="module" src="public.e68d3e2c.js"></script><script src="public.ee8105cc.js" nomodule="" defer=""></script>
+
+                </div>
+            </div>
+
+            <!-- Lead off text -->
+            <div id="chart1-leadoff">
+                <h3 class="section1-h3"> However, this could just be a coincidence. </h3>
+                <p class="section1-p"> Correlation doesn't equal causation: how do we know humans are responsible? </p>
+            </div>
+
+            <!-- 'Anchor' to prevent header overlap -->
+            <a class="anchor" id="c2"></a>
+
+            <!-- Chart 2: Choropleth -->
+            <!-- Partly inspired by Hanna Ritchie's choropleth at https://ourworldindata.org/quaternary-megafauna-extinction -->
+            <div class="chart-container" id="chart2-container">
+
+                <!-- Lead in text -->
+                <div class="leadin2-container">
+                    <div id="chart2-leadin">
+                        
+                        <h3> Human presence has always coincided with mass extinction </h3>
+
+                        <!-- Desc card -->
+                        <div id="chart2-desc-container">
+                            <div class="chart-desc-head">
+                                <span class="material-symbols-outlined">help</span>
+                                <h4>Large mammal extinctions</h4>
+                            </div>
+                            <p>A series of extinctions in megafauna mammal species, occuring approximately 12,000-52,000 years ago.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="chart2"></div>
+
+                <script type="module" src="public.2757380e.js"></script><script src="public.c4cbc50d.js" nomodule="" defer=""></script>
+
+            </div>
+                <!-- Tooltip for chart 2 -->
+                <div id="chart2-tooltip">
+                    <p>Drag the slider to see humanity's spread across the world.</p>
+                </div>
+
+            <!-- Lead off text -->
+            <div id="chart2-leadoff">
+                <p class="section1-p">This extinction irreparably damaged the Earth's diversity in mammals.</p>
+                <h3 class="section1-h3"> Yet humans have still failed to learn the right lessons. </h3>
+            </div>
+
+        <!-- End Section 1 -->
+        </div>
+
+        <hr class="divider-h">
+
+        <!-- Section 2: Holocene and future -->        
+        <div id="main-section2-container">
+
+            <div class="section-head">
+                <h2> Holocene & future </h2>
+                <p>Humans today remain the leading killer of biodiversity, and <b class="bold-med">the situation appears to only be worsening.</b></p>
+            </div>
+
+            <!-- This is just to add padding -->
+            <div id="section2-charts-wrapper">
+
+                <!-- 'Anchor' to prevent header overlap -->
+                <a class="anchor" id="c3"></a>
+
+                <!-- Lead in text -->
+                <div id="chart3-leadin">
+                    <h3 class="section1-h3"> We are currently in the midst of the <b class="bold-heavy">Holocene Extinction</b> </h3>
+                    <p class="section1-p"> This gigantic event has brought extinction rates up to 1000x the previous natural background rate, and is rapidly increasing. </p>
+                </div>
+
+                <!-- Chart 3: Starburst -->
+                <div class="chart-container" id="chart3-container">
+
+                    <div id="chart3-desc">
+                        <h3 class="section1-h3"> Human activity is the key player in the Holocene </h3>
+                    </div>
+
+                    <div id="chart3"></div>
+
+                    <script type="module" src="public.773cbe7c.js"></script><script src="public.96428437.js" nomodule="" defer=""></script>
+
+                </div>
+
+                <!-- 'Anchor' to prevent header overlap -->
+                <a class="anchor" id="c4"></a>
+
+                <!-- Chart 4: 100% stacked area -->
+                <div class="chart-container" id="chart4-container">
+
+                    <!-- Side panel -->
+                    <div id="chart4-sidepanel">
+                        <h5>Human expansion</h5>
+                        <p>The most potent destruction: as humans connect with the physical environment, <b class="bold-med">whole ecosystems are threatened.</b></p>
+                        <p>And humanity is expanding more rapidly than ever.</p>
+
+                        <!-- Desc card -->
+                        <div id="chart4-desc-container">
+                            <div class="chart-desc-head">
+                                <span class="material-symbols-outlined">help</span>
+                                <h4>Land/sea use change</h4>
+                            </div>
+                            <p>Any conversion, via human influence, of the physical environment.</p>
+                        </div>
+
+                    </div>
+
+                    <div id="chart4"></div>
+
+                    <script type="module" src="public.86f11650.js"></script><script src="public.84289cd8.js" nomodule="" defer=""></script>
+
+                </div>
+
+                <!-- 'Anchor' to prevent header overlap -->
+                <a class="anchor" id="c5"></a>
+
+                <div id="chart4-leadoff">
+                    <h3 class="section2-h3"> But Earth's ecosystem will soon have a new killer. </h3>
+                    <p class="section2-p">And humanity has been almost entirely responsible for its exacerbation.</p>
+                </div>
+
+                <!-- Chart 5: Line graph/RPC scenarios -->
+                <div class="chart-container" id="chart5-container">
+
+                    <div id="chart5-desc">
+                        <h3 class="section2-h3"> Global warming </h3>
+                        <p class="section2-p"> ...will inevitably overtake human expansion as the top threat to biodiversity.</p>
+                        <h4 class="section2-h4"> If global warming is not stopped, <b class="bold-med">humanity will simply not even have a planet to destroy.</b></h4>
+                    </div>
+
+                    <div id="chart5"></div>
+
+                    <script type="module" src="public.6a9679ef.js"></script><script src="public.0b3569ba.js" nomodule="" defer=""></script>
+
+                </div>
+
+            
+                <!-- A little coda -->
+                <div id="end-container">
+                    <p class="end-p">But all this said and done...</p>
+                    <p class="end-p">...Even if we stop global warming...</p><p></p>
+                    <p class="end-p"><em>Who will stop us?</em></p>
+                </div>
+
+            <!-- End wrapper-->
+            </div>
+        <!-- End Section 2 -->
+        </div>
+
+    </main>
+
+    <!-- Aside w/ infobox -->
+    <aside>
+
+    </aside>
+
+    <!-- Footer -->
+    <footer>
+
+    </footer>
+
+</body>
+
+<script type="module" src="public.0a225579.js"></script><script src="public.1f6ddfe8.js" nomodule="" defer=""></script>
+
+</html>
