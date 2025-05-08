@@ -269,6 +269,8 @@ body {
                  "nav main aside" 1fr
                  "footer footer footer" 100px
                  / 15vw 77vw 8vw;
+  width: 1920px;
+  height: 1080px;
   transition: grid-template-columns .2s;
   display: grid;
 }
@@ -1302,4 +1304,4 @@ nav {
 footer {
   border-top: 1px solid var(--shade-outline-1);
 }
-/*# sourceMappingURL=public.233eb5df.css.map */
+/*# sourceMappingURL=public.f3fed4fd.css.map */
